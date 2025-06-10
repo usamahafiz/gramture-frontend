@@ -1,0 +1,163 @@
+
+
+.featured-section {
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.featured-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.col {
+  flex: 1;
+}
+
+.text-section {
+  padding-right: 1rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  color: #215577;
+  margin-bottom: 1rem;
+  
+}
+.heading-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+
+}
+
+.gradient-underline.full-width {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  border-radius: 10px;
+}
+
+.sec{
+  margin-top: 60%;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.cards-section {
+  display: flex;
+  justify-content: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.class-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.class-card.down {
+  margin-top: 3rem;
+}
+
+.class-card.up {
+  margin-bottom: 2.5rem; 
+}
+
+.class-image {
+  width: 65%;              
+  height: auto;           
+  display: block;          
+  margin: 0 auto 1rem auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+.class-card h3 {
+  font-size: 1.4rem;
+  color: #34495e;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.class-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.class-card ul li {
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.class-card ul li:last-child {
+  border-bottom: none;
+}
+
+
+
+/* Remove margin on small screens */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-card.down {
+    margin-top: 1rem;
+  }
+
+  /* FIX: remove large margin on small screens */
+  .sec {
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+
+

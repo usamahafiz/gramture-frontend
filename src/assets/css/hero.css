@@ -5,17 +5,16 @@
   padding: 80px 10%;
   min-height: 80vh;
   background-image: url('../images/backgroundambitious.jpg');
-  overflow: hidden; 
-  flex-wrap: wrap; /* ✅ Ensures image wraps properly on smaller desktop screens */
+  overflow: hidden;
+  flex-wrap: wrap;
 }
-
 
 .hero-content {
   max-width: 500px;
 }
 
 .hero-content h1 {
-  font-size: 3.8rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
@@ -27,7 +26,6 @@
   margin-bottom: 25px;
 }
 
-/* CSS */
 .contact-btn {
   padding: 12px 30px;
   font-size: 16px;
@@ -53,21 +51,33 @@
   box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2);
 }
 
-
 /* Carousel image size and consistency */
 .carousel .slide img {
-  height: 400px; /* 👈 force consistent height */
+  height: 400px;
   width: 100%;
   max-width: 320px;
   object-fit: cover;
   border-radius: 10px;
   display: block;
   margin: 0 auto;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
 }
 
-/* Dots styling and positioning below the image */
+/* Smooth transition between slides */
+.carousel .slide {
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.carousel .slide.selected {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* Dots styling */
 .carousel .control-dots {
-  bottom: -20px !important; /* 👈 push dots below image */
+  bottom: -20px !important;
   display: flex;
   justify-content: center;
   padding: 10px 0;
@@ -75,7 +85,7 @@
 }
 
 .carousel .dot {
-  background: #999;
+  /* background: #999; */
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -85,38 +95,27 @@
 
 .carousel .dot.selected,
 .carousel .dot:hover {
-  background: #3b82f6; /* Active dot color */
+  background: #3b82f6;
 }
-
-/* Responsive dot alignment */
-@media (max-width: 768px) {
-  .carousel .control-dots {
-    bottom: -25px !important;
-  }
-}
-
-
-
 
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 !important;  
+  margin: 0 !important;
   padding: 0 !important;
-  flex: 1 1 50%; 
+  flex: 1 1 50%;
 }
 
 .hero-image img {
   max-width: 320px;
   width: 100%;
   border-radius: 10px;
-  margin: 0 auto;         
+  margin: 0 auto;
   display: block;
-
 }
 
-/* Adjust layout and spacing on tablets and smaller */
+/* Responsive adjustments */
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
@@ -129,15 +128,13 @@
     margin-bottom: 30px;
   }
 
-
-
   .hero-image {
-    margin-top: 0 !important;  /* ✅ Remove top margin if any appears */
+    margin-top: 0 !important;
   }
 
   .hero-image img {
     max-width: 90%;
-    margin-top: 0 !important; /* ✅ Prevent unexpected margin-top on mobile */
+    margin-top: 0 !important;
   }
 }
 
@@ -147,17 +144,12 @@
     padding-top: 40px;
   }
 
+  .carousel .control-dots {
+    bottom: -25px !important;
+  }
+
   .hero-image img {
     margin-bottom: 0;
     display: block;
   }
 }
-
-
-
-
-
-
-
-
-

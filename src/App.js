@@ -20,7 +20,7 @@ function App() {
         <Classes />
          <OurTracks />
         <TestimonialsSection />
-        <SubscribeNewsletter />
+        {/* <SubscribeNewsletter /> */}
 
         {/* Your main content goes here */}
       </main>  

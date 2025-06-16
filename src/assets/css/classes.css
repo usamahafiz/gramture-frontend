@@ -10,6 +10,11 @@
   margin: 0 auto;
 }
 
+.heading-wrapper h2{
+  font: 2em sans-serif;
+  font-weight: bold;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

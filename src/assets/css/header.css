@@ -12,44 +12,26 @@
 .logo-container {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo {
-  height: 40px; /* adjust as needed */
-  
+  width: 42px;
+  height: 45px; /* adjust as needed */
 }
 
 .site-name {
   text-decoration: none;
-  color: #333; /* or your desired color */
+  color: #333;
   font-size: 20px;
   font-weight: bold;
 }
-
-
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo {
-  width: 35px;
-  height: 35px;
-}
-
-.site-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
 }
 
 .nav-links {
@@ -60,7 +42,6 @@
 .nav-links a {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
   font-weight: bold;
 }
 
@@ -86,7 +67,6 @@
 .search-btn {
   background: #1d3557;
   color: white;
- 
 }
 
 .search-btn:hover {
@@ -94,7 +74,6 @@
 }
 
 .sign-in-btn {
- 
   padding: 9px 30px;
   font-size: 16px;
   font-weight: bold;
@@ -123,6 +102,8 @@
 .dropdown-title {
   font-weight: bold;
   color: #333;
+  cursor: pointer;
+  padding: 0.5rem 0;
 }
 
 .dropdown-content {
@@ -163,8 +144,6 @@
   }
 }
 
-
-
 .bell-icon {
   width: 24px;
   height: 24px;
@@ -179,8 +158,6 @@
   cursor: pointer;
   font-size: medium;
 }
-
-
 
 .mobile-menu {
   display: none;
@@ -214,7 +191,6 @@
     display: flex;
   }
 
-  /* ✅ Add this to match styles from .nav-links a */
   .mobile-menu a {
     text-decoration: none;
     color: #333;
@@ -226,29 +202,22 @@
   }
 
   .mobile-dropdown .dropdown-content {
-  position: static;
-  box-shadow: none;
-  padding: 0.5rem 1rem;
-  background: #f9f9f9;
-  border-radius: 6px;
-  margin-top: 0.5rem;
-}
+    position: static;
+    box-shadow: none;
+    padding: 0.5rem 1rem;
+    background: #f9f9f9;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
 
-.dropdown-title {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 0.5rem 0;
-}
+  .dropdown-content a {
+    padding: 0.4rem 0;
+    display: block;
+    color: #333;
+    text-decoration: none;
+  }
 
-.dropdown-content a {
-  padding: 0.4rem 0;
-  display: block;
-  color: #333;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  color: #007bff;
-}
-
+  .dropdown-content a:hover {
+    color: #007bff;
+  }
 }

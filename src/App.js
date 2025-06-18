@@ -1,35 +1,36 @@
 import React from 'react';
-import './index.css';
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; 
+import { Routes, Route } from 'react-router-dom'; // ✅ Correct
+
 import Header from './components/header';
-import Footer from './components/footer'; // Assuming you have a Footer component
+import Footer from './components/footer';
 import Hero from './components/hero';
 import Classes from './components/classes';
 import TestimonialsSection from './components/testimonial';
 import OurTracks from './components/ourtrack';
-import SubscribeNewsletter from './components/subscribe';
+import AboutSection from "./components/AboutSection";
 
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Classes />
+      <OurTracks />
+      <TestimonialsSection />
+    </>
+  );
+}
 
 function App() {
   return (
     <div className="app-container">
       <Header />
       <main className='main-content'>
-        <Hero />
-        <Classes />
-         <OurTracks />
-        <TestimonialsSection />
-        <SubscribeNewsletter />
-
-        {/* Your main content goes here */}
-      </main>  
-        <Footer />
-        
-        {/* Your footer content goes here */}
-   
-
-      
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutSection />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }

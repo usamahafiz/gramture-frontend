@@ -3,20 +3,18 @@
   align-items: center;
   justify-content: space-between;
   padding: 80px 10%;
-  /* background: #f8f9fa; */
   min-height: 80vh;
   background-image: url('../images/backgroundambitious.jpg');
-  overflow: hidden; 
-  flex-wrap: wrap; /* ✅ Ensures image wraps properly on smaller desktop screens */
+  overflow: hidden;
+  flex-wrap: wrap; /* ✅ Ensures image wraps properly on smaller screens */
 }
-
 
 .hero-content {
   max-width: 500px;
 }
 
 .hero-content h1 {
-  font-size: 3.8rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
@@ -28,7 +26,6 @@
   margin-bottom: 25px;
 }
 
-/* CSS */
 .contact-btn {
   padding: 12px 30px;
   font-size: 16px;
@@ -54,92 +51,69 @@
   box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2);
 }
 
-
-.search-bar {
-  display: flex;
-  align-items: center;
+/* Carousel image size and consistency */
+.carousel .slide img {
+  height: 400px;
   width: 100%;
-  max-width: 420px;
-  background: #fff;
-  padding: 8px 18px;
-  border-radius: 50px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
 }
 
-.search-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  padding: 8px;
-  border-radius: 50px;
-  min-width: 0; 
+/* Smooth transition between slides */
+.carousel .slide {
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95);
 }
 
-.search-bar .search-bton {
-  background: #1d3557;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s;
-  white-space: nowrap; 
-  flex-shrink: 0; 
+.carousel .slide.selected {
+  opacity: 1;
+  transform: scale(1.03);
 }
 
-.search-bar .search-btn:hover {
-  background: #0056b3;
+/* Dots styling */
+.carousel .control-dots {
+  bottom: -20px !important;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
 }
 
-.suggestion-list {
-  list-style: none;
-  background-color: white;
-  border: 1px solid #ccc;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  z-index: 99;
-  width: 250px;
-  max-height: 150px;
-  overflow-y: auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.carousel .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background 0.3s ease;
 }
 
-.suggestion-list li {
-  padding: 8px;
-  cursor: pointer;
+.carousel .dot.selected,
+.carousel .dot:hover {
+  background: #3b82f6;
 }
-
-.suggestion-list li:hover {
-  background-color: #f0f0f0;
-}
-
-.high {
-  background-color: yellow;
-  transition: background-color 0.5s ease;
-}
-
 
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 !important;  /* ✅ Clear any unintended margin */
+  margin: 0 !important;
   padding: 0 !important;
-  flex: 1 1 50%; /* ✅ Flex shrink/grow for responsive layout */
+  flex: 1 1 50%;
 }
 
 .hero-image img {
-  max-width: 570px;
+  max-width: 320px;
   width: 100%;
   border-radius: 10px;
-  margin: 0 auto;          /* ✅ Center the image */
+  margin: 0 auto;
   display: block;
-  /* vertical-align: middle; */
 }
 
-/* Adjust layout and spacing on tablets and smaller */
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
@@ -152,17 +126,13 @@
     margin-bottom: 30px;
   }
 
-  .search-bar {
-    margin: 0 auto;
-  }
-
   .hero-image {
-    margin-top: 0 !important;  /* ✅ Remove top margin if any appears */
+    margin-top: 0 !important;
   }
 
   .hero-image img {
     max-width: 90%;
-    margin-top: 0 !important; /* ✅ Prevent unexpected margin-top on mobile */
+    margin-top: 0 !important;
   }
 }
 
@@ -172,17 +142,12 @@
     padding-top: 40px;
   }
 
+  .carousel .control-dots {
+    bottom: -25px !important;
+  }
+
   .hero-image img {
     margin-bottom: 0;
     display: block;
   }
 }
-
-
-
-
-
-
-
-
-

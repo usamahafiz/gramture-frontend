@@ -9,28 +9,15 @@ import Classes from './components/classes';
 import TestimonialsSection from './components/testimonial';
 import OurTracks from './components/ourtrack';
 import SubscribeNewsletter from './components/subscribe';
+import AddContent from './pages/Admin-Dashboard/AddTopic';
 
 
 function App() {
   return (
-    <div className="app-container">
-      <Header />
-      <main className='main-content'>
-        <Hero />
-        <Classes />
-         <OurTracks />
-        <TestimonialsSection />
-        {/* <SubscribeNewsletter /> */}
+    <>
+    <AddContent/>
 
-        {/* Your main content goes here */}
-      </main>  
-        <Footer />
-        
-        {/* Your footer content goes here */}
-   
-
-      
-    </div>
+    </>
   );
 }
 

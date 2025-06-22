@@ -20,7 +20,7 @@
   margin: 0 auto;
 }
 
-.heading-wrapper h2{
+.heading-wrapper h2 {
   font: 2.5em sans-serif;
   font-weight: bold;
 }
@@ -96,7 +96,6 @@
   transition: all 0.4s ease-in-out;
 }
 
-
 .dots {
   display: flex;
   gap: 10px;
@@ -142,6 +141,3 @@
     font-size: 1rem;
   }
 }
-
-
-

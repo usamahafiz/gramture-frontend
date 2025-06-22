@@ -1,7 +1,6 @@
 /* Container */
 .track-wrapper {
   padding: 60px 20px;
-  
 }
 
 .track-inner-container {
@@ -15,7 +14,7 @@
   margin-bottom: 40px;
 }
 
-.track-header h2{
+.track-header h2 {
   font: 2.5em sans-serif;
   font-weight: bold;
 }
@@ -91,8 +90,3 @@
   color: #6b7280;
   line-height: 1.6;
 }
-
-
-
-
-

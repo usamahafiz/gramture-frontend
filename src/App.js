@@ -1,29 +1,37 @@
 import React from 'react';
-import './index.css';
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; 
+import { Routes, Route } from 'react-router-dom'; // ✅ Correct
+
 import Header from './components/header';
-import Footer from './components/footer'; // Assuming you have a Footer component
+import Footer from './components/footer';
 import Hero from './components/hero';
 import Classes from './components/classes';
 import TestimonialsSection from './components/testimonial';
 import OurTracks from './components/ourtrack';
-import SubscribeNewsletter from './components/subscribe';
-import Notes from './components/notes/description';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/frontend/home'; // Assuming you have a Home component
+import AboutSection from "./components/AboutSection";
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Classes />
+      <OurTracks />
+      <TestimonialsSection />
+    </>
+  );
+}
 
 function App() {
   return (
-    <>
-    <Routes>
-<Route path="/" element={<Home/>} />
-<Route path="/notes/:selectedClass" element={<Notes />} />
-<Route path="/notes/:selectedClass/:category" element={<Notes />} />
-<Route path="/notes/:selectedClass/:category/:subcategory" element={<Notes />} />
-</Routes>
-  
-    </>
+    <div className="app-container">
+      <Header />
+      <main className='main-content'>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutSection />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

@@ -1,4 +1,3 @@
-// FeaturedClasses.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/classes.css';
@@ -81,6 +80,8 @@ const FeaturedClasses = () => {
               </div>
             </div>
           </div>
+          <p className="description">Coming soon — recently added resources will appear here.</p>
+          <div className="recent-placeholder">🔧 This section will be populated with Firebase data.</div>
         </div>
       </div>
     </section>

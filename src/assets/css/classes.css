@@ -1,5 +1,3 @@
-
-
 .featured-section {
   padding: 4rem 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,36 +8,14 @@
   margin: 0 auto;
 }
 
-.heading-wrapper h2{
+.top-text-center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading-wrapper h2 {
   font: 2em sans-serif;
   font-weight: bold;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.col {
-  flex: 1;
-}
-
-.text-section {
-  padding-right: 1rem;
-}
-
-.title {
-  font-size: 2.8rem;
-  color: #215577;
-  margin-bottom: 1rem;
-  
-}
-.heading-wrapper {
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  margin: 0 auto 30px;
 }
 
 .section-heading {
@@ -47,7 +23,6 @@
   font-weight: bold;
   text-align: center;
   display: inline-block;
-
 }
 
 .gradient-underline.full-width {
@@ -55,38 +30,32 @@
   width: 100%;
   background: linear-gradient(135deg, #4f46e5, #3b82f6);
   border-radius: 10px;
-}
-
-.sec{
-  margin-top: 60%;
+  margin-top: 0.5rem;
 }
 
 .description {
   font-size: 1.2rem;
   color: #555;
   line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.cards-section {
+.horizontal-card-container {
   display: flex;
-  justify-content: center;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
   gap: 2rem;
-  position: relative;
+  justify-content: center;
 }
 
 .class-card {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
+  width: 250px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  cursor: pointer;
+  text-align: center;
 }
 
 .class-card:hover {
@@ -94,36 +63,25 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.class-card.down {
-  margin-top: 3rem;
-}
-
-.class-card.up {
-  margin-bottom: 2.5rem; 
-}
-
 .class-image {
-  width: 65%;              
-  height: auto;           
-  display: block;          
+  width: 100%;
+  height: auto;
+  display: block;
   margin: 0 auto 1rem auto;
   border-radius: 10px;
   object-fit: cover;
 }
 
-
 .class-card h3 {
   font-size: 1.4rem;
   color: #34495e;
   margin-bottom: 0.8rem;
-  text-align: center;
 }
 
 .class-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
 }
 
 .class-card ul li {
@@ -137,32 +95,29 @@
   border-bottom: none;
 }
 
-
-
-/* Remove margin on small screens */
+/* Responsive */
 @media (max-width: 768px) {
-  .row {
+  .horizontal-card-container {
     flex-direction: column;
+    align-items: center;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .class-card.down {
-    margin-top: 1rem;
-  }
-
-  /* FIX: remove large margin on small screens */
-  .sec {
-    text-align: center;
-    margin-top: 0;
+  .class-card {
+    width: 100%;
+    max-width: 350px;
   }
 }
+.recent-section {
+  margin-top: 5rem;
+  text-align: center;
+}
 
-
-
-
-
-
-
+.recent-placeholder {
+  padding: 40px;
+  margin-top: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #777;
+  background-color: #fafafa;
+}

@@ -257,7 +257,7 @@ const Notes = () => {
 
   // Sync category/subcategory from URL
   useEffect(() => {
-    if (category) {
+    if (category && categories.length > 0) {
       const categoryIndex = categories.findIndex(
         (c) => c.toLowerCase() === category.toLowerCase()
       );
@@ -285,29 +285,21 @@ const Notes = () => {
     fetchCategories();
   }, []);
 
-  // Fetch subcategories for the selected category
+  // Fetch subcategories (no filter)
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
         const snapshot = await getDocs(collection(fireStore, "subcategories"));
         const allSubCategories = snapshot.docs.map((doc) => doc.data());
-
-        if (category) {
-          const filtered = allSubCategories.filter(
-            (sub) =>
-              sub.category.toLowerCase() === category.toLowerCase()
-          );
-          setSubCategories(filtered);
-        } else {
-          setSubCategories(allSubCategories);
-        }
+        console.log("All Subcategories:", allSubCategories);
+        setSubCategories(allSubCategories);
       } catch (error) {
         console.error("Error fetching subcategories:", error);
       }
     };
 
     fetchSubCategories();
-  }, [category]);
+  }, []);
 
   // Fetch topics
   const fetchTopics = async (cat, type) => {
@@ -406,40 +398,44 @@ const Notes = () => {
                 }`}
               >
                 <div className="dropdown-content">
-                  {subCategories.map(({ name }) => (
-                    <div key={name}>
-                      <div
-                        className={`content-type ${
-                          activeContentType === name ? "active" : ""
-                        }`}
-                        onClick={() =>
-                          handleContentTypeClick(categoryName, name)
-                        }
-                      >
-                        {name}
-                      </div>
-
-                      {activeContentType === name && (
-                        <div className="topics-list">
-                          {loading ? (
-                            <div className="loading">Loading...</div>
-                          ) : Object.keys(topics).length > 0 ? (
-                            Object.keys(topics).map((topicName, i) => (
-                              <div
-                                key={i}
-                                className="topic-item"
-                                onClick={() => handleTopicClick(topicName)}
-                              >
-                                📌 {topicName}
-                              </div>
-                            ))
-                          ) : (
-                            <div className="no-topics">No topics available</div>
-                          )}
+                  {subCategories.length > 0 ? (
+                    subCategories.map((sub, i) => (
+                      <div key={i}>
+                        <div
+                          className={`content-type ${
+                            activeContentType === sub.name ? "active" : ""
+                          }`}
+                          onClick={() =>
+                            handleContentTypeClick(categoryName, sub.name)
+                          }
+                        >
+                          {sub.name}
                         </div>
-                      )}
-                    </div>
-                  ))}
+
+                        {activeContentType === sub.name && (
+                          <div className="topics-list">
+                            {loading ? (
+                              <div className="loading">Loading...</div>
+                            ) : Object.keys(topics).length > 0 ? (
+                              Object.keys(topics).map((topicName, i) => (
+                                <div
+                                  key={i}
+                                  className="topic-item"
+                                  onClick={() => handleTopicClick(topicName)}
+                                >
+                                  📌 {topicName}
+                                </div>
+                              ))
+                            ) : (
+                              <div className="no-topics">No topics available</div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="no-subcategories">No subcategories found.</div>
+                  )}
                 </div>
               </div>
             </div>

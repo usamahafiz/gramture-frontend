@@ -9,14 +9,20 @@ import Classes from './components/classes';
 import TestimonialsSection from './components/testimonial';
 import OurTracks from './components/ourtrack';
 import SubscribeNewsletter from './components/subscribe';
-import AddContent from './pages/Admin-Dashboard/AddTopic';
-
+import Notes from './components/notes/description';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/frontend/home'; // Assuming you have a Home component
 
 function App() {
   return (
     <>
-    <AddContent/>
-
+    <Routes>
+<Route path="/" element={<Home/>} />
+<Route path="/notes/:selectedClass" element={<Notes />} />
+<Route path="/notes/:selectedClass/:category" element={<Notes />} />
+<Route path="/notes/:selectedClass/:category/:subcategory" element={<Notes />} />
+</Routes>
+  
     </>
   );
 }

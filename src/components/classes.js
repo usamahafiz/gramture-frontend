@@ -1,12 +1,21 @@
 // FeaturedClasses.js
 import React from 'react';
-import '../assets/css/classes.css'; // Ensure this path is correct
+import { useNavigate } from 'react-router-dom';
+import '../assets/css/classes.css';
+
 import class9 from '../assets/images/9 class.jpg';
 import class10 from '../assets/images/class 10.png';
 import class11 from '../assets/images/class 11.png';
 import class12 from '../assets/images/class 12.png';
 
 const FeaturedClasses = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (className) => {
+    // Normalize class name if needed (e.g., replace spaces)
+    navigate(`/notes/${className.toLowerCase().replace(" ", "")}`);
+  };
+
   return (
     <section className="featured-section">
       <div className="featured-container">
@@ -14,12 +23,12 @@ const FeaturedClasses = () => {
           {/* Left Column */}
           <div className="col text-section">
             <div className="sec">
-              <div class="heading-wrapper">
-                <h2 class="section-heading">Featured Classes</h2>
-                <div class="gradient-underline full-width"></div>
+              <div className="heading-wrapper">
+                <h2 className="section-heading">Featured Classes</h2>
+                <div className="gradient-underline full-width"></div>
               </div>
               <p className="description">
-                Explore expertly crafted courses, tailored content, and interactive tools to empower your learning journey online.Unlock your potential with immersive lessons, real-world applications, and a community that grows with you.
+                Explore expertly crafted courses, tailored content, and interactive tools to empower your learning journey online. Unlock your potential with immersive lessons, real-world applications, and a community that grows with you.
               </p>
             </div>
           </div>
@@ -27,7 +36,7 @@ const FeaturedClasses = () => {
           {/* Right Column with Cards */}
           <div className="col cards-sec">
             <div className="card-grid">
-              <div className="class-card down">
+              <div className="class-card down" onClick={() => handleCardClick("9")}>
                 <img src={class9} alt="Class 9" className="class-image" />
                 <h3>Class 9</h3>
                 <ul>
@@ -38,7 +47,7 @@ const FeaturedClasses = () => {
                 </ul>
               </div>
 
-              <div className="class-card up">
+              <div className="class-card up" onClick={() => handleCardClick("10")}>
                 <img src={class10} alt="Class 10" className="class-image" />
                 <h3>Class 10</h3>
                 <ul>
@@ -49,7 +58,7 @@ const FeaturedClasses = () => {
                 </ul>
               </div>
 
-              <div className="class-card down">
+              <div className="class-card down" onClick={() => handleCardClick("11")}>
                 <img src={class11} alt="Class 11" className="class-image" />
                 <h3>Class 11</h3>
                 <ul>
@@ -60,7 +69,7 @@ const FeaturedClasses = () => {
                 </ul>
               </div>
 
-              <div className="class-card up">
+              <div className="class-card up" onClick={() => handleCardClick("12")}>
                 <img src={class12} alt="Class 12" className="class-image" />
                 <h3>Class 12</h3>
                 <ul>
@@ -79,7 +88,3 @@ const FeaturedClasses = () => {
 };
 
 export default FeaturedClasses;
-
-
-
-

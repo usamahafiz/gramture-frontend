@@ -1056,38 +1056,36 @@ const AddContent = () => {
             rules={[{ required: true, message: "Please select a category!" }]}
           >
             <Select
-              mode="multiple"
-              placeholder="Select category(ies)"
-              dropdownRender={(menu) => (
-                <>
-                  {menu}
-                  <div style={{ display: "flex", padding: 8 }}>
-                    <Input
-                      style={{ flex: "auto" }}
-                      placeholder="Add new category"
-                      value={newCategory}
-                      onChange={(e) => setNewCategory(e.target.value)}
-                      onPressEnter={handleAddCategory}
-                    />
-                    <Button
-                      type="primary"
-                      icon={
-                        addingCategory ? <LoadingOutlined /> : <PlusOutlined />
-                      }
-                      onClick={handleAddCategory}
-                    >
-                      {addingCategory ? "Adding..." : "Add"}
-                    </Button>
-                  </div>
-                </>
-              )}
-            >
-              {categories.map((cat) => (
-                <Option key={cat.id} value={cat.name}>
-                  {cat.name}
-                </Option>
-              ))}
-            </Select>
+  placeholder="Select category"
+  dropdownRender={(menu) => (
+    <>
+      {menu}
+      <div style={{ display: "flex", padding: 8 }}>
+        <Input
+          style={{ flex: "auto" }}
+          placeholder="Add new category"
+          value={newCategory}
+          onChange={(e) => setNewCategory(e.target.value)}
+          onPressEnter={handleAddCategory}
+        />
+        <Button
+          type="primary"
+          icon={addingCategory ? <LoadingOutlined /> : <PlusOutlined />}
+          onClick={handleAddCategory}
+        >
+          {addingCategory ? "Adding..." : "Add"}
+        </Button>
+      </div>
+    </>
+  )}
+>
+  {categories.map((cat) => (
+    <Option key={cat.id} value={cat.name}>
+      {cat.name}
+    </Option>
+  ))}
+</Select>
+
           </Form.Item>
 
           <Form.Item
@@ -1098,42 +1096,38 @@ const AddContent = () => {
             ]}
           >
             <Select
-              mode="multiple"
-              placeholder="Select subcategory(ies)"
-              dropdownRender={(menu) => (
-                <>
-                  {menu}
-                  <div style={{ display: "flex", padding: 8 }}>
-                    <Input
-                      style={{ flex: "auto" }}
-                      placeholder="Add new subcategory"
-                      value={newSubCategory}
-                      onChange={(e) => setNewSubCategory(e.target.value)}
-                      onPressEnter={handleAddSubCategory}
-                    />
-                    <Button
-                      type="primary"
-                      icon={
-                        addingSubCategory ? (
-                          <LoadingOutlined />
-                        ) : (
-                          <PlusOutlined />
-                        )
-                      }
-                      onClick={handleAddSubCategory}
-                    >
-                      {addingSubCategory ? "Adding..." : "Add"}
-                    </Button>
-                  </div>
-                </>
-              )}
-            >
-              {subCategories.map((sub) => (
-                <Option key={sub.id} value={sub.name}>
-                  {sub.name}
-                </Option>
-              ))}
-            </Select>
+  placeholder="Select subcategory"
+  dropdownRender={(menu) => (
+    <>
+      {menu}
+      <div style={{ display: "flex", padding: 8 }}>
+        <Input
+          style={{ flex: "auto" }}
+          placeholder="Add new subcategory"
+          value={newSubCategory}
+          onChange={(e) => setNewSubCategory(e.target.value)}
+          onPressEnter={handleAddSubCategory}
+        />
+        <Button
+          type="primary"
+          icon={
+            addingSubCategory ? <LoadingOutlined /> : <PlusOutlined />
+          }
+          onClick={handleAddSubCategory}
+        >
+          {addingSubCategory ? "Adding..." : "Add"}
+        </Button>
+      </div>
+    </>
+  )}
+>
+  {subCategories.map((sub) => (
+    <Option key={sub.id} value={sub.name}>
+      {sub.name}
+    </Option>
+  ))}
+</Select>
+
           </Form.Item>
 
           <Form.Item label="Attach Notes">

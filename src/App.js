@@ -8,6 +8,10 @@ import Classes from './components/classes';
 import TestimonialsSection from './components/testimonial';
 import OurTracks from './components/ourtrack';
 import AboutSection from "./components/AboutSection";
+import Notes from './components/notes/notes';
+import AddContent from './pages/Admin-Dashboard/AddTopic';
+import Preview from './components/pdfViewer/Index';
+import DescriptionPage from './components/DescriptionPage';
 
 function HomePage() {
   return (
@@ -28,6 +32,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutSection />} />
+          <Route path="/addContent" element={<AddContent />} />
+          <Route path="/preview" element={<Preview/>} />
+          <Route path="/description" element={<DescriptionPage />} />
+          <Route path="/notes/:selectedClass" element={<Notes/>} />
+          <Route path="/notes/:selectedClass/:category" element={<Notes />} />
+          <Route path="/notes/:selectedClass/:category/:subcategory" element={<Notes />} />
+
         </Routes>
       </main>
       <Footer />
